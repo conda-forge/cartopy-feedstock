@@ -16,7 +16,6 @@ build:
 requirements:
     build:
         - python
-        - python >=2.7,<3.5  # See https://github.com/SciTools/cartopy/pull/676
         - setuptools
         - six
         - numpy x.x
@@ -32,7 +31,6 @@ requirements:
         - pyepsg
     run:
         - python
-        - python >=2.7,<3.5
         - six
         - mock
         - nose
