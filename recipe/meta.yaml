@@ -29,6 +29,7 @@ requirements:
         - owslib
         - pyshp
         - pyepsg
+        - msinttypes  # [win]
     run:
         - python
         - six
