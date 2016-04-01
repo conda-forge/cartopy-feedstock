@@ -11,12 +11,11 @@ source:
         - cartopy.win.patch  # [win]
 
 build:
-    number: 0
+    number: 1
 
 requirements:
     build:
         - python
-        - python >=2.7,<3.5  # See https://github.com/SciTools/cartopy/pull/676
         - setuptools
         - six
         - numpy x.x
@@ -30,9 +29,9 @@ requirements:
         - owslib
         - pyshp
         - pyepsg
+        - msinttypes  # [win]
     run:
         - python
-        - python >=2.7,<3.5
         - six
         - mock
         - nose
