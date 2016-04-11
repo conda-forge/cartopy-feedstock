@@ -1,4 +1,4 @@
-{% set version = "0.14.0" %}
+{% set version = "0.14.1" %}
 
 package:
     name: cartopy
@@ -7,11 +7,12 @@ package:
 source:
     git_url: https://github.com/SciTools/cartopy.git
     git_tag: v{{ version }}
+    md5: 021a13f625ce71b6040fcddc8727336c
     patches:
         - cartopy.win.patch  # [win]
 
 build:
-    number: 1
+    number: 0
 
 requirements:
     build:
