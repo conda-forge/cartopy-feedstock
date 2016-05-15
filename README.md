@@ -5,7 +5,7 @@ Home: http://scitools.org.uk/cartopy
 
 Package license: GNU LGPL
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: A library providing cartographic tools for python
 
@@ -69,6 +69,7 @@ Terminology
 
 Current build status
 ====================
+
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/cartopy-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/cartopy-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/cartopy-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/cartopy-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/cartopy-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/cartopy-feedstock/branch/master)
