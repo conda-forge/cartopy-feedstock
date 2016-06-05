@@ -8,14 +8,19 @@
 FEEDSTOCK_ROOT=$(cd "$(dirname "$0")/.."; pwd;)
 RECIPE_ROOT=$FEEDSTOCK_ROOT/recipe
 
+docker info
+
 config=$(cat <<CONDARC
 
 channels:
  - conda-forge
 
+ - defaults # As we need conda-build
 
 conda-build:
  root-dir: /feedstock_root/build_artefacts
+
+show_channel_urls: true
 
 CONDARC
 )
@@ -34,9 +39,8 @@ echo "$config" > ~/.condarc
 # A lock sometimes occurs with incomplete builds. The lock file is stored in build_artefacts.
 conda clean --lock
 
-conda update --yes --all --quiet
-conda install --yes --quiet conda-forge-build-setup
-source activate root
+conda update --yes --all
+conda install --yes conda-build
 conda info
 
 # Embarking on 6 case(s).
@@ -45,40 +49,40 @@ conda info
     export CONDA_PY=27
     set +x
     conda build /recipe_root --quiet || exit 1
-    upload_or_check_exists /recipe_root conda-forge --channel=main || exit 1
+    /feedstock_root/ci_support/upload_or_check_non_existence.py /recipe_root conda-forge --channel=main || exit 1
 
     set -x
     export CONDA_NPY=111
     export CONDA_PY=27
     set +x
     conda build /recipe_root --quiet || exit 1
-    upload_or_check_exists /recipe_root conda-forge --channel=main || exit 1
+    /feedstock_root/ci_support/upload_or_check_non_existence.py /recipe_root conda-forge --channel=main || exit 1
 
     set -x
     export CONDA_NPY=110
     export CONDA_PY=34
     set +x
     conda build /recipe_root --quiet || exit 1
-    upload_or_check_exists /recipe_root conda-forge --channel=main || exit 1
+    /feedstock_root/ci_support/upload_or_check_non_existence.py /recipe_root conda-forge --channel=main || exit 1
 
     set -x
     export CONDA_NPY=111
     export CONDA_PY=34
     set +x
     conda build /recipe_root --quiet || exit 1
-    upload_or_check_exists /recipe_root conda-forge --channel=main || exit 1
+    /feedstock_root/ci_support/upload_or_check_non_existence.py /recipe_root conda-forge --channel=main || exit 1
 
     set -x
     export CONDA_NPY=110
     export CONDA_PY=35
     set +x
     conda build /recipe_root --quiet || exit 1
-    upload_or_check_exists /recipe_root conda-forge --channel=main || exit 1
+    /feedstock_root/ci_support/upload_or_check_non_existence.py /recipe_root conda-forge --channel=main || exit 1
 
     set -x
     export CONDA_NPY=111
     export CONDA_PY=35
     set +x
     conda build /recipe_root --quiet || exit 1
-    upload_or_check_exists /recipe_root conda-forge --channel=main || exit 1
+    /feedstock_root/ci_support/upload_or_check_non_existence.py /recipe_root conda-forge --channel=main || exit 1
 EOF
