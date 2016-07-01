@@ -94,7 +94,6 @@ install:
     - cmd: conda config --set show_channel_urls true
     - cmd: conda install -c pelson/channel/development --yes --quiet obvious-ci
     - cmd: conda config --add channels conda-forge
-    - cmd: conda install -n root --quiet --yes conda-build anaconda-client jinja2 setuptools
     - cmd: conda install -n root --quiet --yes conda-forge-build-setup
     - cmd: run_conda_forge_build_setup
 
