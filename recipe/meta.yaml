@@ -51,6 +51,8 @@ test:
         - cartopy
         - cartopy.mpl.geoaxes
         - cartopy.crs
+    commands:
+        - conda inspect linkages -n _test cartopy  # [linux]
 
 about:
     home: http://scitools.org.uk/cartopy
