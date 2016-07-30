@@ -12,7 +12,7 @@ source:
         - cartopy.win.patch  # [win]
 
 build:
-    number: 0
+    number: 1
 
 requirements:
     build:
@@ -22,7 +22,7 @@ requirements:
         - numpy x.x
         - cython
         - proj.4
-        - geos
+        - geos 3.4.*
         # On OSX We need to effectively pin the geos version to the
         # one used by the specific shapely being targetted (we're letting
         # conda's package solver will deal with that).
@@ -51,6 +51,8 @@ test:
         - cartopy
         - cartopy.mpl.geoaxes
         - cartopy.crs
+    commands:
+        - conda inspect linkages -n _test cartopy  # [not win]
 
 about:
     home: http://scitools.org.uk/cartopy
