@@ -12,7 +12,7 @@ source:
         - cartopy.win.patch  # [win]
 
 build:
-    number: 1
+    number: 2
 
 requirements:
     build:
@@ -21,7 +21,7 @@ requirements:
         - six
         - numpy x.x
         - cython
-        - proj.4
+        - proj.4 4.9.3
         - geos 3.4.*
         # On OSX We need to effectively pin the geos version to the
         # one used by the specific shapely being targetted (we're letting
@@ -39,7 +39,7 @@ requirements:
         - pillow
         - owslib
         - numpy x.x
-        - proj.4
+        - proj.4 4.9.3
         - shapely >=1.5.6
         - scipy
         - pyshp
@@ -51,8 +51,8 @@ test:
         - cartopy
         - cartopy.mpl.geoaxes
         - cartopy.crs
-    commands:
-        - conda inspect linkages -n _test cartopy  # [not win]
+    #commands:
+        #- conda inspect linkages -p $PREFIX cartopy  # [not win]
 
 about:
     home: http://scitools.org.uk/cartopy
