@@ -61,5 +61,6 @@ about:
 
 extra:
     recipe-maintainers:
-        - pelson
+        - marqh
         - ocefpaf
+        - pelson
