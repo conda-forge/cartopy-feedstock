@@ -33,7 +33,6 @@ conda search cartopy --channel conda-forge
 ```
 
 
-
 About conda-forge
 =================
 
