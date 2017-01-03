@@ -46,7 +46,6 @@ test:
     - cartopy.mpl.geoaxes
     - cartopy.crs
   commands:
-    - nosetests cartopy --with-doctest -sv  # [linux]
     #- conda inspect linkages -p $PREFIX cartopy  # [not win]
     #- conda inspect objects -p $PREFIX cartopy  # [osx]
 
