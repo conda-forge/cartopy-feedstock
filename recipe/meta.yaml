@@ -46,12 +46,13 @@ test:
     - cartopy.mpl.geoaxes
     - cartopy.crs
   commands:
-    #- conda inspect linkages -p $PREFIX cartopy  # [not win]
-    #- conda inspect objects -p $PREFIX cartopy  # [osx]
+    - conda inspect linkages -p $PREFIX cartopy  # [not win]
+    - conda inspect objects -p $PREFIX cartopy  # [osx]
 
 about:
   home: http://scitools.org.uk/cartopy
   license: GNU LGPL
+  license_file: COPYING
   summary: 'A library providing cartographic tools for python.'
 
 extra:
