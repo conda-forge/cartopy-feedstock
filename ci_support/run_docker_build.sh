@@ -41,18 +41,7 @@ conda clean --lock
 conda install --yes --quiet conda-forge-build-setup
 source run_conda_forge_build_setup
 
-# Install conda-build 2.x to build a long prefix.
-conda install --yes --quiet conda-build=2
-conda info
-
-# Embarking on 8 case(s).
-    set -x
-    export CONDA_NPY=110
-    export CONDA_PY=27
-    set +x
-    conda build /recipe_root --quiet || exit 1
-    upload_or_check_non_existence /recipe_root conda-forge --channel=main || exit 1
-
+# Embarking on 6 case(s).
     set -x
     export CONDA_NPY=111
     export CONDA_PY=27
@@ -61,22 +50,8 @@ conda info
     upload_or_check_non_existence /recipe_root conda-forge --channel=main || exit 1
 
     set -x
-    export CONDA_NPY=110
-    export CONDA_PY=34
-    set +x
-    conda build /recipe_root --quiet || exit 1
-    upload_or_check_non_existence /recipe_root conda-forge --channel=main || exit 1
-
-    set -x
-    export CONDA_NPY=111
-    export CONDA_PY=34
-    set +x
-    conda build /recipe_root --quiet || exit 1
-    upload_or_check_non_existence /recipe_root conda-forge --channel=main || exit 1
-
-    set -x
-    export CONDA_NPY=110
-    export CONDA_PY=35
+    export CONDA_NPY=112
+    export CONDA_PY=27
     set +x
     conda build /recipe_root --quiet || exit 1
     upload_or_check_non_existence /recipe_root conda-forge --channel=main || exit 1
@@ -89,8 +64,8 @@ conda info
     upload_or_check_non_existence /recipe_root conda-forge --channel=main || exit 1
 
     set -x
-    export CONDA_NPY=110
-    export CONDA_PY=36
+    export CONDA_NPY=112
+    export CONDA_PY=35
     set +x
     conda build /recipe_root --quiet || exit 1
     upload_or_check_non_existence /recipe_root conda-forge --channel=main || exit 1
@@ -102,6 +77,10 @@ conda info
     conda build /recipe_root --quiet || exit 1
     upload_or_check_non_existence /recipe_root conda-forge --channel=main || exit 1
 
-# Inspect the prefix lengths of the built packages.
-conda inspect prefix-lengths /feedstock_root/build_artefacts/linux-64/*.tar.bz2
+    set -x
+    export CONDA_NPY=112
+    export CONDA_PY=36
+    set +x
+    conda build /recipe_root --quiet || exit 1
+    upload_or_check_non_existence /recipe_root conda-forge --channel=main || exit 1
 EOF
