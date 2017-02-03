@@ -34,7 +34,7 @@ requirements:
     - shapely
     - scipy
     - pyshp
-    - matplotlib
+    - matplotlib <2
     - pyepsg
 
 test:
