@@ -1,4 +1,4 @@
-{% set version = "0.15.0" %}
+{% set version = "0.15.1" %}
 
 package:
   name: cartopy
@@ -7,7 +7,7 @@ package:
 source:
   fn: cartopy-{{ version }}.tar.gz
   url: https://github.com/SciTools/cartopy/archive/v{{ version }}.tar.gz
-  sha256: fdee52cc2f259785a7744951ba43f339d33d517a5ec9cee301a33a267c60fd65
+  sha256: c2221eaf8cb3827b026a398374f3b2e9431aa77fdf95754229232ef5236221ed
   patches:
     - cartopy.win.patch  # [win]
 
