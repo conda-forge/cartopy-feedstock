@@ -1,0 +1,25 @@
+diff --git a/lib/cartopy/mpl/feature_artist.py b/lib/cartopy/mpl/feature_artist.py
+index 7cce646..524b646 100644
+--- a/lib/cartopy/mpl/feature_artist.py
++++ b/lib/cartopy/mpl/feature_artist.py
+@@ -108,6 +108,7 @@ class FeatureArtist(matplotlib.artist.Artist):
+             # was removed after mpl v1.2.0, so the hard-coded value of 1 is
+             # used instead.
+             self.set_zorder(1)
++        self._kwargs.setdefault('linewidth', 1.0)
+ 
+         self._feature = feature
+ 
+diff --git a/lib/cartopy/mpl/gridliner.py b/lib/cartopy/mpl/gridliner.py
+index 1932745..42ee019 100644
+--- a/lib/cartopy/mpl/gridliner.py
++++ b/lib/cartopy/mpl/gridliner.py
+@@ -29,7 +29,7 @@ import cartopy
+ from cartopy.crs import Projection, _RectangularProjection
+ 
+ 
+-degree_locator = mticker.MaxNLocator(nbins=9, steps=[1, 2, 3, 6, 15, 18])
++degree_locator = mticker.MaxNLocator(nbins=9, steps=[1, 1.5, 1.8, 2, 3, 6, 10])
+ 
+ _DEGREE_SYMBOL = u'\u00B0'
+ 

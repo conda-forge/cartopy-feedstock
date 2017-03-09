@@ -10,9 +10,11 @@ source:
   sha256: c2221eaf8cb3827b026a398374f3b2e9431aa77fdf95754229232ef5236221ed
   patches:
     - cartopy.win.patch  # [win]
+    # Library changes taken from https://github.com/SciTools/cartopy/pull/773
+    - matplotlib2.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -34,7 +36,7 @@ requirements:
     - shapely
     - scipy
     - pyshp
-    - matplotlib <2
+    - matplotlib
     - pyepsg
 
 test:
