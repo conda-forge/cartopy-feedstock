@@ -14,7 +14,7 @@ source:
     - matplotlib2.patch
 
 build:
-  number: 4
+  number: 5
 
 requirements:
   build:
@@ -25,7 +25,7 @@ requirements:
     - numpy 1.9.*  # [win and py35]
     - numpy 1.11.*  # [win and py36]
     - msinttypes  # [win]
-    - geos 3.5.1
+    - geos 3.6.2
     - proj4 4.9.3
   run:
     - python
@@ -36,7 +36,7 @@ requirements:
     - pillow
     - owslib
     - proj4 4.9.3
-    - geos 3.5.1
+    - geos 3.6.2
     - shapely
     - scipy
     - pyshp
