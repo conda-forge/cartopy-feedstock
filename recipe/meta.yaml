@@ -1,4 +1,4 @@
-{% set version = "0.15.1" %}
+{% set version = "0.16.0" %}
 
 package:
   name: cartopy
@@ -6,32 +6,26 @@ package:
 
 source:
   url: https://github.com/SciTools/cartopy/archive/v{{ version }}.tar.gz
-  sha256: c2221eaf8cb3827b026a398374f3b2e9431aa77fdf95754229232ef5236221ed
+  sha256: 688606f2a9782f14997d57142fbec89d4e8f10cd3dcb4c7c3b0d0a2dd7098cc8
   patches:
     # Cartopy geos_c patch.
     - cartopy.win.patch  # [win]
-    # Library changes taken from https://github.com/SciTools/cartopy/pull/773
-    - matplotlib2.patch
 
 build:
-  number: 5
+  number: 0
 
 requirements:
   build:
     - python
-    - setuptools
+    - pip
     - cython
-    - numpy 1.8.*  # [not (win and (py35 or py36))]
-    - numpy 1.9.*  # [win and py35]
-    - numpy 1.11.*  # [win and py36]
+    - numpy 1.11.*
     - msinttypes  # [win]
     - geos 3.6.2
     - proj4 4.9.3
   run:
     - python
-    - numpy >=1.8  # [not (win and (py35 or py36))]
-    - numpy >=1.9  # [win and py35]
-    - numpy >=1.11  # [win and py36]
+    - numpy >=1.11
     - six
     - pillow
     - owslib
@@ -49,8 +43,8 @@ test:
     - cartopy.mpl.geoaxes
     - cartopy.crs
   commands:
-    - conda inspect linkages -p $PREFIX cartopy  # [not win]
-    - conda inspect objects -p $PREFIX cartopy  # [osx]
+    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: http://scitools.org.uk/cartopy

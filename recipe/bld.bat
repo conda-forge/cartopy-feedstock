@@ -4,4 +4,4 @@ set INCLUDE=%LIBRARY_INC%;%INCLUDE%
 
 rmdir lib\cartopy\tests\mpl\baseline_images /s /q
 
-%PYTHON% setup.py install --single-version-externally-managed --record record.txt
+%PYTHON% -m pip install --no-deps --ignore-installed .
