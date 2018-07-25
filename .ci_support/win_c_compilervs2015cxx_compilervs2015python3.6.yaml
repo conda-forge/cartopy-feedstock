@@ -1,0 +1,24 @@
+c_compiler:
+- vs2015
+cxx_compiler:
+- vs2015
+geos:
+- 3.6.2
+numpy:
+- '1.11'
+pin_run_as_build:
+  geos:
+    max_pin: x.x.x
+  proj4:
+    max_pin: x.x.x
+  python:
+    max_pin: x.x
+    min_pin: x.x
+proj4:
+- 4.9.3
+python:
+- '3.6'
+zip_keys:
+- - python
+  - c_compiler
+  - cxx_compiler
