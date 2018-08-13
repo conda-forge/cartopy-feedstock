@@ -6,31 +6,34 @@ package:
 
 source:
   url: https://github.com/SciTools/cartopy/archive/v{{ version }}.tar.gz
-  sha256: 688606f2a9782f14997d57142fbec89d4e8f10cd3dcb4c7c3b0d0a2dd7098cc8
+  sha256: cadf62434492c965220b37f0548bc58180466ad6894a1db57dbc51cd43467e5c
   patches:
     # Cartopy geos_c patch.
     - cartopy.win.patch  # [win]
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
     - python
     - pip
     - cython
-    - numpy 1.11.*
+    - numpy
     - msinttypes  # [win]
-    - geos 3.6.2
-    - proj4 4.9.3
+    - geos
+    - proj4
   run:
     - python
-    - numpy >=1.11
+    - {{ pin_compatible('numpy') }}
     - six
     - pillow
     - owslib
-    - proj4 4.9.3
-    - geos 3.6.2
+    - proj4
+    - geos
     - shapely
     - scipy
     - pyshp
