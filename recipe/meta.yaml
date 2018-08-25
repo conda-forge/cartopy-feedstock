@@ -45,9 +45,6 @@ test:
     - cartopy
     - cartopy.mpl.geoaxes
     - cartopy.crs
-  commands:
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: http://scitools.org.uk/cartopy
