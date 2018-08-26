@@ -23,7 +23,7 @@ requirements:
     - pip
     - cython
     - numpy
-    - msinttypes  # [win]
+    - msinttypes  # [win and vc<14]
     - geos
     - proj4
   run:
