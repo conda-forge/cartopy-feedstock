@@ -1,7 +1,13 @@
 c_compiler:
 - toolchain_c
+channel_sources:
+- conda-forge,defaults
+channel_targets:
+- conda-forge main
 cxx_compiler:
 - toolchain_cxx
+docker_image:
+- condaforge/linux-anvil
 geos:
 - 3.6.2
 numpy:
@@ -15,6 +21,6 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 proj4:
-- 4.9.3
+- 5.1.0
 python:
 - '2.7'
