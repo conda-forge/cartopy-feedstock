@@ -9,7 +9,7 @@ cxx_compiler:
 geos:
 - 3.6.2
 numpy:
-- '1.11'
+- '1.14'
 pin_run_as_build:
   geos:
     max_pin: x.x.x
@@ -21,7 +21,7 @@ pin_run_as_build:
   vc:
     max_pin: x
 proj4:
-- 5.1.0
+- 4.9.3
 python:
 - '2.7'
 vc:
