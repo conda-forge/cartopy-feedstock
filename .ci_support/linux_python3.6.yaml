@@ -21,6 +21,6 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 proj4:
-- 5.1.0
+- 4.9.3
 python:
 - '3.6'
