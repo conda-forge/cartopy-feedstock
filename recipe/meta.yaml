@@ -1,18 +1,19 @@
-{% set version = "0.16.0" %}
+{% set version = "0.17.0.dev" %}
+{% set commit = "c7b80a69e75ae9b74d70a0de93cc9e14238a4bfa" %}
 
 package:
   name: cartopy
   version: {{ version }}
 
 source:
-  url: https://github.com/SciTools/cartopy/archive/v{{ version }}.tar.gz
-  sha256: cadf62434492c965220b37f0548bc58180466ad6894a1db57dbc51cd43467e5c
+  url: https://github.com/SciTools/cartopy/archive/{{ commit }}.tar.gz
+  sha256: 7d07bebf4e54e292472501fa520cfc48e85ab096cd9888b180a86b66fc3b94ac
   patches:
     # Cartopy geos_c patch.
     - cartopy.win.patch  # [win]
 
 build:
-  number: 1002
+  number: 1000
 
 requirements:
   build:
