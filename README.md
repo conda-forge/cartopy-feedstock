@@ -3,7 +3,7 @@ About cartopy
 
 Home: http://scitools.org.uk/cartopy
 
-Package license: GNU LGPL
+Package license: LGPL
 
 Feedstock license: BSD 3-Clause
 
