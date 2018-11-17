@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/SciTools/cartopy/archive/v{{ version }}.tar.gz
-  sha256: d0325ad4df0e51a94c4c2c258afa04b1ce32e239f8f7dc8b9edfaf38b23ff207
+  sha256: 137642e63952404ec0841fa0333ad14c58fbbf19cca2a5ac6a38498c4b4998fb
   patches:
     # Cartopy geos_c patch.
     - cartopy.win.patch  # [win]
@@ -49,7 +49,7 @@ test:
 
 about:
   home: http://scitools.org.uk/cartopy
-  license: LGPL
+  license: LGPL-3.0
   license_file: COPYING
   summary: 'A library providing cartographic tools for python.'
 
