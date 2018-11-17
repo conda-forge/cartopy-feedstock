@@ -1,4 +1,4 @@
-{% set version = "0.16.0" %}
+{% set version = "0.17.0" %}
 
 package:
   name: cartopy
@@ -6,13 +6,13 @@ package:
 
 source:
   url: https://github.com/SciTools/cartopy/archive/v{{ version }}.tar.gz
-  sha256: cadf62434492c965220b37f0548bc58180466ad6894a1db57dbc51cd43467e5c
+  sha256: d0325ad4df0e51a94c4c2c258afa04b1ce32e239f8f7dc8b9edfaf38b23ff207
   patches:
     # Cartopy geos_c patch.
     - cartopy.win.patch  # [win]
 
 build:
-  number: 1002
+  number: 1000
 
 requirements:
   build:
@@ -39,6 +39,7 @@ requirements:
     - pyshp
     - matplotlib
     - pyepsg
+    - pykdtree
 
 test:
   imports:
@@ -48,7 +49,7 @@ test:
 
 about:
   home: http://scitools.org.uk/cartopy
-  license: GNU LGPL
+  license: LGPL
   license_file: COPYING
   summary: 'A library providing cartographic tools for python.'
 
