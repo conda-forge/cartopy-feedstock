@@ -5,14 +5,14 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/SciTools/cartopy/archive/v{{ version }}.tar.gz
-  sha256: 137642e63952404ec0841fa0333ad14c58fbbf19cca2a5ac6a38498c4b4998fb
+  url: https://pypi.io/packages/source/C/Cartopy/Cartopy-{{version}}.tar.gz
+  sha256: 424bd9e9ddef6e48cbdee694ce589ec431be8591f15b6cb93cb2b333a29b2c61
   patches:
     # Cartopy geos_c patch.
     - cartopy.win.patch  # [win]
 
 build:
-  number: 1001
+  number: 1002
 
 requirements:
   build:
