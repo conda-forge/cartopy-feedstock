@@ -11,7 +11,7 @@ channel_targets:
 cxx_compiler:
 - toolchain_cxx
 geos:
-- 3.6.2
+- 3.7.0
 macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:
