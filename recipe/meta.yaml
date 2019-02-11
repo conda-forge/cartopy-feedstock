@@ -1,4 +1,4 @@
-{% set version = "0.17.0" %}
+{% set version = "0.16.0" %}
 
 package:
   name: cartopy
@@ -6,14 +6,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/C/Cartopy/Cartopy-{{version}}.tar.gz
-  sha256: 424bd9e9ddef6e48cbdee694ce589ec431be8591f15b6cb93cb2b333a29b2c61
+  sha256: cadf62434492c965220b37f0548bc58180466ad6894a1db57dbc51cd43467e5c
   patches:
     # Cartopy geos_c patch.
     - cartopy.win.patch  # [win]
 
 build:
   skip: True  # [win and vc<14]
-  number: 1004
+  number: 3
 
 requirements:
   build:
@@ -40,7 +40,6 @@ requirements:
     - pyshp
     - matplotlib
     - pyepsg
-    - pykdtree
 
 test:
   imports:
