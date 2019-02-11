@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/C/Cartopy/Cartopy-{{version}}.tar.gz
-  sha256: cadf62434492c965220b37f0548bc58180466ad6894a1db57dbc51cd43467e5c
+  sha256: f23dffa101f43dd91e866a49ebb5f5048be2a24ab8a921a5c07edabde746d9a4
   patches:
     # Cartopy geos_c patch.
     - cartopy.win.patch  # [win]
