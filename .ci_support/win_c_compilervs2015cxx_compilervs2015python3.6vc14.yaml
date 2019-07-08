@@ -7,12 +7,10 @@ channel_targets:
 cxx_compiler:
 - vs2015
 geos:
-- 3.7.1
+- 3.7.2
 numpy:
-- '1.11'
+- '1.14'
 pin_run_as_build:
-  geos:
-    max_pin: x.x.x
   proj4:
     max_pin: x.x.x
   python:
@@ -21,7 +19,7 @@ pin_run_as_build:
   vc:
     max_pin: x
 proj4:
-- 5.2.0
+- 6.1.0
 python:
 - '3.6'
 vc:
