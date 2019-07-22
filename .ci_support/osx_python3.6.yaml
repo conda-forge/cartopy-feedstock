@@ -21,12 +21,8 @@ macos_min_version:
 numpy:
 - '1.14'
 pin_run_as_build:
-  proj4:
-    max_pin: x.x.x
   python:
     min_pin: x.x
     max_pin: x.x
-proj4:
-- 6.1.0
 python:
 - '3.6'
