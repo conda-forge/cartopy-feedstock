@@ -13,7 +13,7 @@ source:
 
 build:
   skip: True  # [win and vc<14]
-  number: 1005
+  number: 1006
 
 requirements:
   build:
@@ -24,16 +24,15 @@ requirements:
     - pip
     - cython
     - numpy
-    - msinttypes  # [win and vc<14]
     - geos
-    - proj4
+    - proj4 5.2.0
   run:
     - python
     - {{ pin_compatible('numpy') }}
     - six
     - pillow
     - owslib
-    - proj4
+    - proj4 5.2.0
     - geos
     - shapely
     - scipy
