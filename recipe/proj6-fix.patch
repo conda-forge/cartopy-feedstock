@@ -1,0 +1,74 @@
+diff --git a/setup.py b/setup.py
+index 3903396..1654689 100644
+--- a/setup.py
++++ b/setup.py
+@@ -33,4 +33,5 @@
+ import sys
+ import warnings
++from collections import defaultdict
+ 
+ import versioneer
+@@ -230,6 +231,18 @@ def find_proj_version_by_program(conda=None):
+     return proj_version
+ 
+ 
++def get_proj_libraries():
++    """
++    This function gets the PROJ libraries to cythonize with
++    """
++    proj_libraries = ["proj"]
++    if os.name == "nt" and proj_version >= (6, 0, 0):
++        proj_libraries = [
++            "proj_{}_{}".format(proj_version[0], proj_version[1])
++        ]
++    return proj_libraries
++
++
+ conda = os.getenv('CONDA_DEFAULT_ENV')
+ if conda is not None and conda in sys.prefix:
+     # Conda does not provide pkg-config compatibility, but the search paths
+@@ -245,7 +258,7 @@ if conda is not None and conda in sys.prefix:
+         exit(1)
+ 
+     proj_includes = []
+-    proj_libraries = ['proj']
++    proj_libraries = get_proj_libraries()
+     proj_library_dirs = []
+ 
+ else:
+@@ -268,7 +281,7 @@ else:
+             exit(1)
+ 
+         proj_includes = []
+-        proj_libraries = ['proj']
++        proj_libraries = get_proj_libraries()
+         proj_library_dirs = []
+     else:
+         if proj_version < PROJ_MIN_VERSION:
+@@ -316,11 +329,11 @@ if sys.platform.startswith('win'):
+         return '.'
+ include_dir = get_config_var('INCLUDEDIR')
+ library_dir = get_config_var('LIBDIR')
+-if sys.platform.startswith('win'):
+-    extra_extension_args = {}
+-else:
+-    extra_extension_args = dict(
+-        runtime_library_dirs=[get_config_var('LIBDIR')])
++extra_extension_args = defaultdict(list)
++if not sys.platform.startswith('win'):
++    extra_extension_args["runtime_library_dirs"].append(
++        get_config_var('LIBDIR')
++    )
+ 
+ # Description
+ # ===========
+@@ -330,4 +343,9 @@ with open(os.path.join(HERE, 'README.md'), 'r') as fh:
+ 
+ 
++if proj_version >= (6, 0, 0):
++    extra_extension_args["define_macros"].append(
++        ('ACCEPT_USE_OF_DEPRECATED_PROJ_API_H', '1')
++    )
++
+ cmdclass = versioneer.get_cmdclass()
+ cmdclass.update({'build_ext': build_ext})
