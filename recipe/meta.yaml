@@ -26,14 +26,14 @@ requirements:
     - numpy
     - msinttypes  # [win and vc<14]
     - geos
-    - proj4
+    - proj
   run:
     - python
     - {{ pin_compatible('numpy') }}
     - six
     - pillow
     - owslib
-    - proj4
+    - proj
     - geos
     - shapely
     - scipy
