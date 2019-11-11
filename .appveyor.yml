@@ -16,6 +16,9 @@ environment:
     - CONFIG: win_c_compilervs2015cxx_compilervs2015python3.7vc14
       CONDA_INSTALL_LOCN: C:\Miniconda36-x64
 
+    - CONFIG: win_c_compilervs2015cxx_compilervs2015python3.8vc14
+      CONDA_INSTALL_LOCN: C:\Miniconda36-x64
+
 
 # We always use a 64-bit machine, but can build x86 distributions
 # with the TARGET_ARCH variable.
@@ -51,4 +54,5 @@ build: off
 test_script:
     - conda.exe build recipe -m .ci_support\%CONFIG%.yaml
 deploy_script:
+    - set "GIT_BRANCH=%APPVEYOR_REPO_BRANCH%"
     - cmd: upload_package .\ .\recipe .ci_support\%CONFIG%.yaml
