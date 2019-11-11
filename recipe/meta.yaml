@@ -9,6 +9,7 @@ source:
   sha256: 424bd9e9ddef6e48cbdee694ce589ec431be8591f15b6cb93cb2b333a29b2c61
   patches:
     # Cartopy geos_c patch.
+    - proj6-fix.patch
     - cartopy.win.patch  # [win]
 
 build:
