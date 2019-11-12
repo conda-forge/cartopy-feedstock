@@ -7,7 +7,7 @@ Package license: LGPL-3.0
 
 Feedstock license: BSD 3-Clause
 
-Summary: A library providing cartographic tools for python.
+Summary: A library providing cartographic tools for python
 
 
 
