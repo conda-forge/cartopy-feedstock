@@ -14,7 +14,7 @@ source:
 
 build:
   skip: True  # [win and vc<14]
-  number: 1008
+  number: 1009
 
 requirements:
   build:
