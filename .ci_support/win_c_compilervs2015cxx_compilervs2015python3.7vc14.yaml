@@ -3,25 +3,21 @@ c_compiler:
 channel_sources:
 - conda-forge,defaults
 channel_targets:
-- conda-forge main
+- conda-forge cartopy_dev
 cxx_compiler:
 - vs2015
 geos:
-- 3.6.2
+- 3.8.0
 numpy:
-- '1.11'
+- '1.14'
 pin_run_as_build:
-  geos:
-    max_pin: x.x.x
-  proj4:
-    max_pin: x.x.x
   python:
     min_pin: x.x
     max_pin: x.x
   vc:
     max_pin: x
-proj4:
-- 4.9.3
+proj:
+- 6.3.0
 python:
 - '3.7'
 vc:

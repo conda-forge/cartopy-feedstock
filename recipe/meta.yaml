@@ -1,19 +1,18 @@
-{% set version = "0.17.0.dev" %}
-{% set commit = "c7b80a69e75ae9b74d70a0de93cc9e14238a4bfa" %}
+{% set version = "0.18.0b1" %}
 
 package:
   name: cartopy
   version: {{ version }}
 
 source:
-  url: https://github.com/SciTools/cartopy/archive/{{ commit }}.tar.gz
-  sha256: 7d07bebf4e54e292472501fa520cfc48e85ab096cd9888b180a86b66fc3b94ac
+  url: https://pypi.io/packages/source/C/Cartopy/Cartopy-{{version}}.tar.gz
+  sha256: 1cf5b69ff81936ef66c29397ec663d582523b1d000f04e4e4157e742a897ce55
   patches:
-    # Cartopy geos_c patch.
-    - cartopy.win.patch  # [win]
+    - proj6-fix.patch
 
 build:
-  number: 1000
+  number: 0
+  skip: True  # [win and vc<14]
 
 requirements:
   build:
@@ -26,20 +25,21 @@ requirements:
     - numpy
     - msinttypes  # [win and vc<14]
     - geos
-    - proj4
+    - proj
   run:
     - python
     - {{ pin_compatible('numpy') }}
     - six
     - pillow
     - owslib
-    - proj4
+    - proj
     - geos
     - shapely
     - scipy
     - pyshp
-    - matplotlib
+    - matplotlib-base
     - pyepsg
+    - pykdtree
 
 test:
   imports:
@@ -49,9 +49,9 @@ test:
 
 about:
   home: http://scitools.org.uk/cartopy
-  license: GNU LGPL
+  license: LGPL-3.0
   license_file: COPYING
-  summary: 'A library providing cartographic tools for python.'
+  summary: 'A library providing cartographic tools for python'
 
 extra:
   recipe-maintainers:
