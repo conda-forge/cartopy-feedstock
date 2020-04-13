@@ -14,7 +14,7 @@ source:
 
 build:
   skip: True  # [win and vc<14]
-  number: 1014
+  number: 1015
 
 requirements:
   build:
@@ -61,3 +61,4 @@ extra:
     - ocefpaf
     - pelson
     - dopplershift
+    - xylar
