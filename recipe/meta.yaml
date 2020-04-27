@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/C/Cartopy/Cartopy-{{version}}.tar.gz
+  url: https://pypi.io/packages/source/C/Cartopy/Cartopy-{{ version }}.tar.gz
   sha256: e98e7d8c6abe553bd92500a15ff1da749a3ebf6261520b3376c6b3c4de5cc058
 
 build:
