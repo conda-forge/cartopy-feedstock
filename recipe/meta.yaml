@@ -1,20 +1,16 @@
-{% set version = "0.17.0" %}
+{% set version = "0.18.0" %}
 
 package:
   name: cartopy
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/C/Cartopy/Cartopy-{{version}}.tar.gz
-  sha256: 424bd9e9ddef6e48cbdee694ce589ec431be8591f15b6cb93cb2b333a29b2c61
-  patches:
-    # Cartopy geos_c patch.
-    - proj6-fix.patch
-    - cartopy.win.patch  # [win]
+  url: https://pypi.io/packages/source/C/Cartopy/Cartopy-{{ version }}.tar.gz
+  sha256: 7ffa317e8f8011e0d965a3ef1179e57a049f77019867ed677d49dcc5c0744434
 
 build:
-  skip: True  # [win and vc<14]
-  number: 1015
+  skip: true  # [win and vc<14]
+  number: 0
 
 requirements:
   build:
@@ -26,22 +22,18 @@ requirements:
     - cython
     - numpy
     - msinttypes  # [win and vc<14]
-    - geos
-    - proj
+    - gdal
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - six
-    - pillow
-    - owslib
-    - proj
-    - geos
-    - shapely
-    - scipy
-    - pyshp
-    - matplotlib-base
-    - pyepsg
-    - pykdtree
+    - pillow >=1.7.8
+    - owslib >=0.8.11
+    - shapely >=1.5.6
+    - scipy >=0.10
+    - pyshp >=1.1.4
+    - matplotlib-base >=1.5.1
+    - pyepsg >=0.4.0
+    - gdal
 
 test:
   imports:
@@ -51,9 +43,13 @@ test:
 
 about:
   home: http://scitools.org.uk/cartopy
-  license: LGPL-3.0
-  license_file: COPYING
-  summary: 'A library providing cartographic tools for python'
+  license: LGPL-3
+  license_file: 
+    - COPYING
+    - COPYING.LESSER
+  summary: A library providing cartographic tools for python
+  dev_url: https://github.com/SciTools/cartopy
+  doc_url: https://scitools.org.uk/cartopy/docs/latest/
 
 extra:
   recipe-maintainers:
