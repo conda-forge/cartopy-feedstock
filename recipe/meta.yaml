@@ -1,20 +1,20 @@
-{% set version = "0.17.0" %}
+{% set version = "0.18.0" %}
 
 package:
   name: cartopy
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/C/Cartopy/Cartopy-{{version}}.tar.gz
-  sha256: 424bd9e9ddef6e48cbdee694ce589ec431be8591f15b6cb93cb2b333a29b2c61
+  url: https://pypi.io/packages/source/C/Cartopy/Cartopy-{{ version }}.tar.gz
+  sha256: 7ffa317e8f8011e0d965a3ef1179e57a049f77019867ed677d49dcc5c0744434
   patches:
     # Cartopy geos_c patch.
     - proj6-fix.patch
     - cartopy.win.patch  # [win]
 
 build:
-  skip: True  # [win and vc<14]
-  number: 1015
+  skip: true  # [win and vc<14]
+  number: 0
 
 requirements:
   build:
@@ -53,7 +53,7 @@ about:
   home: http://scitools.org.uk/cartopy
   license: LGPL-3.0
   license_file: COPYING
-  summary: 'A library providing cartographic tools for python'
+  summary: A library providing cartographic tools for python
 
 extra:
   recipe-maintainers:
