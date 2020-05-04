@@ -20,9 +20,9 @@ requirements:
     - python
     - pip
     - cython
-    - numpy >=1.10
+    - numpy
     - msinttypes  # [win and vc<14]
-    - gdal >=1.10.0
+    - gdal
   run:
     - python
     - {{ pin_compatible('numpy') }}
@@ -33,7 +33,7 @@ requirements:
     - pyshp >=1.1.4
     - matplotlib-base >=1.5.1
     - pyepsg >=0.4.0
-    - gdal >=1.10.0
+    - gdal
 
 test:
   imports:
