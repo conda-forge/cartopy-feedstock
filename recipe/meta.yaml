@@ -36,6 +36,11 @@ requirements:
     - geos
 
 test:
+  requires:
+    - matplotlib-base >=1.5.1
+    - gdal >=1.10.0
+    - pillow >=1.7.8
+    - scipy >=0.10
   imports:
     - cartopy
     - cartopy.mpl.geoaxes
