@@ -23,6 +23,7 @@ requirements:
     - numpy
     - msinttypes  # [win and vc<14]
     - proj
+    - geos
   run:
     - python
     - {{ pin_compatible('numpy') }}
@@ -34,6 +35,7 @@ requirements:
     - matplotlib-base >=1.5.1
     - pyepsg >=0.4.0
     - proj
+    - geos
 
 test:
   imports:
