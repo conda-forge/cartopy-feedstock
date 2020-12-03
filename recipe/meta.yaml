@@ -35,7 +35,7 @@ requirements:
     # proj and geos are needed as dependencies even though not listed upstream
     - proj
     - geos
-    # including matpltolib-base enven though it's optional upstream
+    # including matpltolib-base even though it's optional upstream
     - matplotlib-base >=1.5.1
 
 test:
