@@ -11,7 +11,7 @@ source:
 build:
   skip: true  # [win and vc<14]
   error_overlinking: true
-  number: 5
+  number: 6
 
 requirements:
   build:
@@ -35,10 +35,11 @@ requirements:
     # proj and geos are needed as dependencies even though not listed upstream
     - proj
     - geos
+    # including matpltolib-base enven though it's optional upstream
+    - matplotlib-base >=1.5.1
 
 test:
   requires:
-    - matplotlib-base >=1.5.1
     - gdal >=1.10.0
     - pillow >=1.7.8
     - scipy >=0.10
