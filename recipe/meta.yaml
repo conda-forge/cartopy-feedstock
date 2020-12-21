@@ -11,7 +11,7 @@ source:
 build:
   skip: true  # [win and vc<14]
   error_overlinking: true
-  number: 6
+  number: 7
 
 requirements:
   build:
@@ -37,16 +37,15 @@ requirements:
     - geos
     # including matplotlib-base even though it's optional upstream
     - matplotlib-base >=1.5.1
+    - scipy >=0.10
 
 test:
-  requires:
-    - gdal >=1.10.0
-    - pillow >=1.7.8
-    - scipy >=0.10
   imports:
     - cartopy
     - cartopy.mpl.geoaxes
     - cartopy.crs
+  commands:
+    - python -c "import cartopy.crs as ccrs; import matplotlib.pyplot as plt; ax = plt.axes(projection=ccrs.PlateCarree())"
 
 about:
   home: http://scitools.org.uk/cartopy
