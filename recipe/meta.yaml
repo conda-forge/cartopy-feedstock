@@ -11,7 +11,7 @@ source:
 build:
   skip: true  # [win and vc<14]
   error_overlinking: true
-  number: 10
+  number: 11
 
 requirements:
   build:
