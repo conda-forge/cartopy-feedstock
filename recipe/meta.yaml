@@ -7,11 +7,15 @@ package:
 source:
   url: https://pypi.io/packages/source/C/Cartopy/Cartopy-{{ version }}.tar.gz
   sha256: 7ffa317e8f8011e0d965a3ef1179e57a049f77019867ed677d49dcc5c0744434
+  patches:
+    # Drop next release
+    - backport-1565.patch
+
 
 build:
   skip: true  # [win and vc<14]
   error_overlinking: true
-  number: 12
+  number: 13
 
 requirements:
   build:
@@ -49,7 +53,7 @@ test:
 
 about:
   home: http://scitools.org.uk/cartopy
-  license: LGPL-3
+  license: LGPL-3.0-or-later
   license_file: 
     - COPYING
     - COPYING.LESSER
