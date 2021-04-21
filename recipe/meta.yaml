@@ -21,6 +21,7 @@ requirements:
   host:
     - python
     - pip
+    - setuptools-scm
     - cython
     - numpy
     - msinttypes  # [win and vc<14]
