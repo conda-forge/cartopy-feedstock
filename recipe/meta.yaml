@@ -7,9 +7,6 @@ package:
 source:
   url: https://pypi.io/packages/source/C/Cartopy/Cartopy-{{ version }}.tar.gz
   sha256: 8e902a40f2a11bcf4a72e6e42c6eac335be23716377e42d99dc4628b7d84e790
-  patches:
-    # Drop next release
-    - backport-1565.patch
 
 
 build:
