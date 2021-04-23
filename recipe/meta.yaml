@@ -1,4 +1,4 @@
-{% set version = "0.18.0" %}
+{% set version = "0.19.0" %}
 
 package:
   name: cartopy
@@ -6,16 +6,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/C/Cartopy/Cartopy-{{ version }}.tar.gz
-  sha256: 7ffa317e8f8011e0d965a3ef1179e57a049f77019867ed677d49dcc5c0744434
-  patches:
-    # Drop next release
-    - backport-1565.patch
+  sha256: 8e902a40f2a11bcf4a72e6e42c6eac335be23716377e42d99dc4628b7d84e790
 
 
 build:
   skip: true  # [win and vc<14]
   error_overlinking: true
-  number: 13
+  number: 0
 
 requirements:
   build:
@@ -24,6 +21,7 @@ requirements:
   host:
     - python
     - pip
+    - setuptools-scm
     - cython
     - numpy
     - msinttypes  # [win and vc<14]
@@ -54,7 +52,7 @@ test:
 about:
   home: http://scitools.org.uk/cartopy
   license: LGPL-3.0-or-later
-  license_file: 
+  license_file:
     - COPYING
     - COPYING.LESSER
   summary: A library providing cartographic tools for python
