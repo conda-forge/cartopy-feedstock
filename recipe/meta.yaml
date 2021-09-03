@@ -42,6 +42,7 @@ requirements:
     # including matplotlib-base even though it's optional upstream
     - matplotlib-base >=1.5.1
     - scipy >=0.10
+    - ucrt  # [win]
 
 test:
   imports:
