@@ -1,55 +1,64 @@
-{% set version = "0.18.0rc1" %}
+{% set version = "0.20.0a1" %}
 
 package:
   name: cartopy
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/C/Cartopy/Cartopy-{{ version }}.tar.gz
-  sha256: e98e7d8c6abe553bd92500a15ff1da749a3ebf6261520b3376c6b3c4de5cc058
+  git_url: git@github.com:SciTools/cartopy.git
+  git_tag: ac4c14f180e2d1f8ff10c93160648574e5fcfcac
 
 build:
+  error_overlinking: true
   number: 0
-  skip: True  # [win and vc<14]
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - proj                                   # [build_platform != target_platform]
+    - geos                                   # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - python
     - pip
+    - setuptools-scm
     - cython
     - numpy
-    - msinttypes  # [win and vc<14]
-    - geos
     - proj
+    - geos
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - six
-    - pillow
-    - owslib
+    - shapely >=1.5.6
+    - pyshp >=1.1.4
+    - six >=1.3.0
     - proj
     - geos
-    - shapely
-    - scipy
-    - pyshp
-    - matplotlib-base
-    - pyepsg
-    - pykdtree
+    # including matplotlib-base even though it's optional upstream
+    - matplotlib-base >=1.5.1
+    - scipy >=0.10
 
 test:
   imports:
     - cartopy
     - cartopy.mpl.geoaxes
     - cartopy.crs
+  commands:
+    - python -c "import cartopy.crs as ccrs; import matplotlib.pyplot as plt; ax = plt.axes(projection=ccrs.PlateCarree())"
 
 about:
   home: http://scitools.org.uk/cartopy
-  license: LGPL-3.0
-  license_file: COPYING
-  summary: 'A library providing cartographic tools for python'
+  license: LGPL-3.0-or-later
+  license_file:
+    - COPYING
+    - COPYING.LESSER
+  summary: A library providing cartographic tools for python
+  dev_url: https://github.com/SciTools/cartopy
+  doc_url: https://scitools.org.uk/cartopy/docs/latest/
 
 extra:
   recipe-maintainers:
@@ -57,3 +66,4 @@ extra:
     - ocefpaf
     - pelson
     - dopplershift
+    - xylar
