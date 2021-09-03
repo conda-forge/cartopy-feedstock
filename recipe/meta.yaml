@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  git_url: git@github.com:SciTools/cartopy.git
+  git_url: https://github.com/SciTools/cartopy.git
   git_tag: ac4c14f180e2d1f8ff10c93160648574e5fcfcac
 
 build:
