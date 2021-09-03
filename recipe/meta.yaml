@@ -7,10 +7,12 @@ package:
 source:
   url: https://pypi.io/packages/source/C/Cartopy/Cartopy-{{ version }}.tar.gz
   sha256: 4b8b4773a98ed7009fe17d9b6ec87ac3ac62b7d14634d7768c190eadc647d576
+  patches:
+     - gh1833_update_ne_url.patch
 
 build:
   error_overlinking: true
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -41,6 +43,7 @@ requirements:
     # including matplotlib-base even though it's optional upstream
     - matplotlib-base >=1.5.1
     - scipy >=0.10
+    - ucrt  # [win]
 
 test:
   imports:
