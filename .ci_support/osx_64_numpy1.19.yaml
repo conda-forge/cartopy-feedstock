@@ -17,19 +17,11 @@ geos:
 macos_machine:
 - x86_64-apple-darwin13.4.0
 numpy:
-- '1.18'
-pin_run_as_build:
-  python:
-    min_pin: x.x
-    max_pin: x.x
+- '1.19'
 proj:
 - 8.0.1
-python:
-- 3.6.* *_cpython
 target_platform:
 - osx-64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
-- - python
-  - numpy
