@@ -1,4 +1,4 @@
-{% set version = "0.19.0.post1" %}
+{% set version = "0.20.0" %}
 
 package:
   name: cartopy
@@ -6,13 +6,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/C/Cartopy/Cartopy-{{ version }}.tar.gz
-  sha256: 4b8b4773a98ed7009fe17d9b6ec87ac3ac62b7d14634d7768c190eadc647d576
-  patches:
-     - gh1833_update_ne_url.patch
+  sha256: eae58aff26806e63cf115b2bce9477cedc4aa9f578c5e477b2c25cfa404f2b7a
 
 build:
   error_overlinking: true
-  number: 1
+  number: 0
+   # compatible proj and pyproj are only available for py>=37
+  skip: true  # [py<37]
 
 requirements:
   build:
@@ -35,13 +35,14 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - shapely >=1.5.6
-    - pyshp >=1.1.4
+    - shapely >=1.6.4
+    - pyshp >=2.1
     - six >=1.3.0
     - proj
+    - pyproj >=3.0
     - geos
     # including matplotlib-base even though it's optional upstream
-    - matplotlib-base >=1.5.1
+    - matplotlib-base >=3.1
     - scipy >=0.10
     - ucrt  # [win]
 
@@ -70,3 +71,4 @@ extra:
     - pelson
     - dopplershift
     - xylar
+    - akrherz
