@@ -10,7 +10,7 @@ source:
 
 build:
   error_overlinking: true
-  number: 0
+  number: 1
    # compatible proj and pyproj are only available for py>=37
   skip: true  # [py<37]
 
