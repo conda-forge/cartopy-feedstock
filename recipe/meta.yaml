@@ -23,7 +23,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - python
+    - python >=3.7
     - pip
     - setuptools-scm
     - cython
@@ -31,12 +31,13 @@ requirements:
     - proj
     - geos
   run:
-    - python
+    - python >=3.7
     - {{ pin_compatible('numpy') }}
     - shapely >=1.5.6
     - pyshp >=1.1.4
     - six >=1.3.0
     - proj
+    - pyproj
     - geos
     # including matplotlib-base even though it's optional upstream
     - matplotlib-base >=1.5.1
