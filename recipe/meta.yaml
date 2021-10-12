@@ -41,10 +41,11 @@ requirements:
     - proj
     - pyproj >=3.0
     - geos
-    # including matplotlib-base even though it's optional upstream
     - matplotlib-base >=3.1
     - scipy >=0.10
     - ucrt  # [win]
+    # make openssl an explicit dependency because we're having trouble with >=3
+    - openssl
 
 test:
   imports:
