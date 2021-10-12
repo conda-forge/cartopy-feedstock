@@ -32,6 +32,8 @@ requirements:
     - numpy
     - proj
     - geos
+    # make openssl an explicit dependency because we're having trouble with >=3
+    - openssl
   run:
     - python
     - {{ pin_compatible('numpy') }}
