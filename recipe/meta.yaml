@@ -51,6 +51,7 @@ test:
     - cartopy.mpl.geoaxes
     - cartopy.crs
   commands:
+    - openssl s_client -connect naturalearth.s3.amazonaws.com:443
     - python -c "import cartopy.crs as ccrs; import matplotlib.pyplot as plt; ax = plt.axes(projection=ccrs.PlateCarree())"
 
 about:
