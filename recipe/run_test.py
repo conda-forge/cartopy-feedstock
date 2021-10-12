@@ -1,3 +1,5 @@
+import os
+os.system("openssl s_client -connect naturalearth.s3.amazonaws.com:443")
 import cartopy.crs as ccrs
 
 import matplotlib
