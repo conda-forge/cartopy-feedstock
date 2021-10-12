@@ -10,6 +10,8 @@ geos:
 - 3.9.1
 numpy:
 - '1.18'
+openssl:
+- 1.1.1
 pin_run_as_build:
   python:
     min_pin: x.x
