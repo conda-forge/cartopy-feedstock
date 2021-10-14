@@ -10,7 +10,7 @@ source:
 
 build:
   error_overlinking: true
-  number: 0
+  number: 1
    # compatible proj and pyproj are only available for py>=37
   skip: true  # [py<37]
 
@@ -32,8 +32,6 @@ requirements:
     - numpy
     - proj
     - geos
-    # make openssl an explicit dependency because we're having trouble with >=3
-    - openssl
   run:
     - python
     - {{ pin_compatible('numpy') }}
@@ -46,8 +44,6 @@ requirements:
     - matplotlib-base >=3.1
     - scipy >=0.10
     - ucrt  # [win]
-    # make openssl an explicit dependency because we're having trouble with >=3
-    - openssl
 
 test:
   imports:
