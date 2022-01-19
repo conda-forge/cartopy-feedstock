@@ -260,7 +260,6 @@ Feedstock Maintainers
 
 * [@akrherz](https://github.com/akrherz/)
 * [@dopplershift](https://github.com/dopplershift/)
-* [@marqh](https://github.com/marqh/)
 * [@ocefpaf](https://github.com/ocefpaf/)
 * [@pelson](https://github.com/pelson/)
 * [@xylar](https://github.com/xylar/)
