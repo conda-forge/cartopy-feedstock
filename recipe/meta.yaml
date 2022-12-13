@@ -1,4 +1,4 @@
-{% set version = "0.21.0" %}
+{% set version = "0.21.1" %}
 
 package:
   name: cartopy
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/C/Cartopy/Cartopy-{{ version }}.tar.gz
-  sha256: ce1d3a28a132e94c89ac33769a50f81f65634ab2bd40556317e15bd6cad1ce42
+  sha256: 89d5649712c8582231c6e11825a04c85f6f0cee94dbb89e4db23eabca1cc250a
 
 build:
   error_overlinking: true
   skip: true  # [py<38]
-  number: 3
+  number: 0
 
 requirements:
   build:
