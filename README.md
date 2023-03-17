@@ -1,11 +1,11 @@
-About cartopy
-=============
+About cartopy-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cartopy-feedstock/blob/main/LICENSE.txt)
 
 Home: http://scitools.org.uk/cartopy
 
 Package license: LGPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cartopy-feedstock/blob/main/LICENSE.txt)
 
 Summary: A library providing cartographic tools for python
 
