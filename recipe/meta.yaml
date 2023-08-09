@@ -1,17 +1,20 @@
-{% set version = "0.21.1" %}
+{% set name = "cartopy" %}
+{% set version = "0.22.0" %}
 
 package:
-  name: cartopy
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/C/Cartopy/Cartopy-{{ version }}.tar.gz
-  sha256: 89d5649712c8582231c6e11825a04c85f6f0cee94dbb89e4db23eabca1cc250a
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/Cartopy-{{ version }}.tar.gz
+  sha256: b300f90120931d43f11ef87c064ea1dacec1b59a4940aa76ebf82cf09548bb49
 
 build:
   error_overlinking: true
-  skip: true  # [py<38]
-  number: 1
+  skip: true  # [py<39]
+  entry_points:
+    - feature_download = tools.cartopy_feature_download.py:__main__
+  number: 0
 
 requirements:
   build:
@@ -19,26 +22,23 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
-    - geos                                   # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
     - python
     - pip
+    - setuptools >=40.6.0
     - setuptools-scm >=7.0.0
-    - cython
+    - cython >=0.29.24
     - numpy
-    - geos
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - shapely >=1.6.4
+    - matplotlib-base >=3.4
+    - shapely >=1.7
+    - packaging >=20
     - pyshp >=2.1
-    - pyproj >=3.0.0
-    - geos
-    - matplotlib-base >=3.1
-    - scipy >=0.10
-    - ucrt  # [win]
+    - pyproj >=3.1.0
 
 test:
   imports:
