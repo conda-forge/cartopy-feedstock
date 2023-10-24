@@ -14,7 +14,7 @@ build:
   skip: true  # [py<39]
   entry_points:
     - feature_download = tools.cartopy_feature_download.py:__main__
-  number: 0
+  number: 1
 
 requirements:
   build:
