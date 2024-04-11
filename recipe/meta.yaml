@@ -34,11 +34,11 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - matplotlib-base >=3.4
+    - matplotlib-base >=3.5
     - shapely >=1.7
     - packaging >=20
-    - pyshp >=2.1
-    - pyproj >=3.1.0
+    - pyshp >=2.3
+    - pyproj >=3.3.1
 
 test:
   imports:
