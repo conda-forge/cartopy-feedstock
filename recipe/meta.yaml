@@ -1,5 +1,5 @@
 {% set name = "cartopy" %}
-{% set version = "0.22.0" %}
+{% set version = "0.23.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/Cartopy-{{ version }}.tar.gz
-  sha256: b300f90120931d43f11ef87c064ea1dacec1b59a4940aa76ebf82cf09548bb49
+  sha256: 231f37b35701f2ba31d94959cca75e6da04c2eea3a7f14ce1c75ee3b0eae7676
 
 build:
   error_overlinking: true
   skip: true  # [py<39]
   entry_points:
     - feature_download = tools.cartopy_feature_download.py:__main__
-  number: 1
+  number: 0
 
 requirements:
   build:
