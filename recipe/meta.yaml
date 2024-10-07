@@ -11,7 +11,7 @@ source:
 
 build:
   error_overlinking: true
-  skip: true  # [py<39]
+  skip: true  # [py<310]
   entry_points:
     - feature_download = tools.cartopy_feature_download.py:__main__
   number: 0
@@ -34,9 +34,9 @@ requirements:
     - numpy
   run:
     - python
-    - matplotlib-base >=3.5
-    - shapely >=1.7
-    - packaging >=20
+    - matplotlib-base >=3.6
+    - shapely >=1.8
+    - packaging >=21
     - pyshp >=2.3
     - pyproj >=3.3.1
 
