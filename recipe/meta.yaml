@@ -1,5 +1,5 @@
 {% set name = "cartopy" %}
-{% set version = "0.24.0" %}
+{% set version = "0.24.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e044e0e0fa76bb7afde937bec541743dcbf6b6f23b933a21ebddcd20cfffb755
+  sha256: 01c910d5634c69a7efdec46e0a17d473d2328767f001d4dc0b5c4b48e585c8bd
 
 build:
   error_overlinking: true
