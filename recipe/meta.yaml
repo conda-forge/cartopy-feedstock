@@ -28,14 +28,14 @@ requirements:
   host:
     - python
     - pip
-    - setuptools >=40.6.0
-    - setuptools-scm >=7.0.0
+    - setuptools >=77.0.3
+    - setuptools-scm >=8.0.0
     - cython >=0.29.24
     - numpy
   run:
     - python
     - matplotlib-base >=3.6
-    - shapely >=1.8
+    - shapely >=2.0
     - packaging >=21
     - pyshp >=2.3
     - pyproj >=3.3.1
