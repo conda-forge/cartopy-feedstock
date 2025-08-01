@@ -1,13 +1,13 @@
 {% set name = "cartopy" %}
-{% set version = "0.24.0" %}
+{% set version = "0.25.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e044e0e0fa76bb7afde937bec541743dcbf6b6f23b933a21ebddcd20cfffb755
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 55f1a390e5f3f075b221c7d91fb10258ad978db786c7930eba06eb45d28753fe
 
 build:
   error_overlinking: true
@@ -28,14 +28,14 @@ requirements:
   host:
     - python
     - pip
-    - setuptools >=40.6.0
-    - setuptools-scm >=7.0.0
+    - setuptools >=77.0.3
+    - setuptools-scm >=8.0.0
     - cython >=0.29.24
     - numpy
   run:
     - python
     - matplotlib-base >=3.6
-    - shapely >=1.8
+    - shapely >=2.0
     - packaging >=21
     - pyshp >=2.3
     - pyproj >=3.3.1
