@@ -11,7 +11,6 @@ source:
 
 build:
   error_overlinking: true
-  skip: true  # [py<310]
   entry_points:
     - feature_download = tools.cartopy_feature_download.py:__main__
   number: 1
