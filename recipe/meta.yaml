@@ -6,15 +6,14 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: e044e0e0fa76bb7afde937bec541743dcbf6b6f23b933a21ebddcd20cfffb755
 
 build:
   error_overlinking: true
-  skip: true  # [py<310]
   entry_points:
     - feature_download = tools.cartopy_feature_download.py:__main__
-  number: 0
+  number: 1
 
 requirements:
   build:
