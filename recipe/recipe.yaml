@@ -1,0 +1,77 @@
+schema_version: 1
+
+context:
+  name: cartopy
+  version: "0.25.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: 55f1a390e5f3f075b221c7d91fb10258ad978db786c7930eba06eb45d28753fe
+
+build:
+  number: 3
+  dynamic_linking:
+    overlinking_behavior: error
+  python:
+    entry_points:
+      - feature_download = tools.cartopy_feature_download.py:__main__
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+        - cython
+        - numpy
+    - ${{ compiler('c') }}
+    - ${{ stdlib('c') }}
+    - ${{ compiler('cxx') }}
+  host:
+    - python
+    - pip
+    - setuptools >=77.0.3
+    - setuptools-scm >=8.0.0
+    - cython >=0.29.24
+    - numpy
+  run:
+    - python
+    - matplotlib-base >=3.6
+    - shapely >=2.0
+    - packaging >=21
+    - pyshp >=2.3
+    - pyproj >=3.3.1
+
+tests:
+  - python:
+      imports:
+        - cartopy
+        - cartopy.mpl.geoaxes
+        - cartopy.crs
+      pip_check: true
+  - script:
+      - python -c "import cartopy.crs as ccrs; import matplotlib.pyplot as plt; ax = plt.axes(projection=ccrs.PlateCarree())"
+      - python run_test.py
+    files:
+      recipe:
+        - run_test.py
+
+about:
+  homepage: http://scitools.org.uk/cartopy
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: A library providing cartographic tools for python
+  repository: https://github.com/SciTools/cartopy
+  documentation: https://scitools.org.uk/cartopy/docs/latest/
+
+extra:
+  recipe-maintainers:
+    - ocefpaf
+    - pelson
+    - dopplershift
+    - xylar
+    - akrherz
