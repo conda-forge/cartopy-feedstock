@@ -35,16 +35,17 @@ requirements:
     - python
     - pip
     - setuptools >=77.0.3
-    - setuptools-scm >=8.0.0
-    - cython >=0.29.24
+    - cython >=3.0
     - numpy
+    - setuptools-scm >=8.0.0
   run:
     - python
-    - matplotlib-base >=3.6
+    - numpy >=1.26
+    - matplotlib-base >=3.8
     - shapely >=2.0
     - packaging >=21
-    - pyshp >=2.3
-    - pyproj >=3.3.1
+    - pyshp >=2.3.1
+    - pyproj >=3.6
 
 tests:
   - python:
