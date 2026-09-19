@@ -13,7 +13,7 @@ source:
   sha256: b87a35835f30333760cc46194bd90b6a4958d12f488f50131d4c4c0962ad9c3c
 
 build:
-  number: 0
+  number: 1
   dynamic_linking:
     overlinking_behavior: error
   python:
